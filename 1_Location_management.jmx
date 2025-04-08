@@ -1,0 +1,2445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="sec-ch-ua" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua</stringProp>
+            <stringProp name="Header.value">&quot;Not A(Brand&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;121&quot;, &quot;Chromium&quot;;v=&quot;121&quot;</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-mobile" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+            <stringProp name="Header.value">?0</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-platform" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+            <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">nikepsr.o9solutions.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="resultPath" elementType="Argument">
+            <stringProp name="Argument.name">resultPath</stringProp>
+            <stringProp name="Argument.value">C:\Users\dhanavel.ramesh\general\general\AssortmentPlanning_JMEterScript\Execution_Result_26022025\JMeter-Parameterised\SingleUser</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Delaytime" elementType="Argument">
+            <stringProp name="Argument.name">Delaytime</stringProp>
+            <stringProp name="Argument.value">0</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <intProp name="HTTPSampler.concurrentPool">6</intProp>
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.implementation"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <collectionProp name="DNSCacheManager.hosts"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">false</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+        <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager">
+        <boolProp name="clearEachIteration">false</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Location Management">
+        <stringProp name="ThreadGroup.num_threads">${__P(threads,1)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(rampup,3)}</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="T01 - Login">
+          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1 - Enter Username and Password">
+            <intProp name="HTTPSampler.concurrentPool">6</intProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">/api/framework/auth/login/v2</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+&quot;UserEmail&quot;: &quot;test1@aptesting.com&quot;,&#xd;
+&quot;SubmittedPassword&quot;: &quot;Perf@1234&quot;,&#xd;
+&quot;ExpirySeconds&quot;: &quot;5000&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;89&quot;, &quot;Chromium&quot;;v=&quot;89&quot;, &quot;;Not A Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">Token</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.AuthToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">ABC</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="T02 - Navigate to Location Management parameterise" enabled="false">
+          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="2 - Load Country Filter" enabled="true">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">0</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">api/v2/widget/getdata</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;LevelAttributes&quot;:[{&quot;Id&quot;:&quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&quot;AttributeName&quot;:&quot;Country&quot;,&quot;Dimension&quot;:&quot;Location&quot;,&quot;DimensionId&quot;:130363,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Country&quot;,&quot;DimensionName&quot;:&quot;Location&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:1,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false,&quot;MemberProperties&quot;:[{&quot;Name&quot;:&quot;DisplayName&quot;,&quot;Sort&quot;:&quot;ascending&quot;,&quot;ExcludeFromSelect&quot;:true}]},{&quot;Id&quot;:&quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&quot;AttributeName&quot;:&quot;Geo&quot;,&quot;Dimension&quot;:&quot;Location&quot;,&quot;DimensionId&quot;:130363,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Geo&quot;,&quot;DimensionName&quot;:&quot;Location&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:0,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&quot;AttributeName&quot;:&quot;Country&quot;,&quot;Dimension&quot;:&quot;Location&quot;,&quot;DimensionId&quot;:130363,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Country&quot;,&quot;DimensionName&quot;:&quot;Location&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&amp;NACountry&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:1,&quot;ShowFilterAs&quot;:&quot;TileView&quot;}],&quot;DataProperties&quot;:{&quot;IncludeNulls&quot;:false,&quot;NullsForFinerGrainSelect&quot;:false,&quot;NullsForUnrelatedAttrSelect&quot;:false,&quot;SubTotalsType&quot;:&quot;NoSubtotals&quot;,&quot;MaxRecordLimit&quot;:10000}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${Token}</stringProp>
+                </elementProp>
+                <elementProp name="o9-uielement" elementType="Header">
+                  <stringProp name="Header.name">o9-uielement</stringProp>
+                  <stringProp name="Header.value">#/Assortment%20Planning/Store%20Master/Store%20Master|View|e9e67d47-9d02-4da3-9435-1585f07dc46e</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="Client-Locale" elementType="Header">
+                  <stringProp name="Header.name">Client-Locale</stringProp>
+                  <stringProp name="Header.value">en-US</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3 - Load Channel Filter" enabled="true">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">0</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">api/v2/widget/getdata</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;LevelAttributes&quot;:[{&quot;Id&quot;:&quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&quot;AttributeName&quot;:&quot;MPU Level 3&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;MPU Level 3&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:6,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false,&quot;MemberProperties&quot;:[{&quot;Name&quot;:&quot;DisplayName&quot;,&quot;Sort&quot;:&quot;ascending&quot;,&quot;ExcludeFromSelect&quot;:true}]},{&quot;Id&quot;:&quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&quot;AttributeName&quot;:&quot;MPU Level 2&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;MPU Level 2&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:5,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&quot;AttributeName&quot;:&quot;MPU&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;MPU&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:false,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:4,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&quot;AttributeName&quot;:&quot;Channel&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Channel&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:3,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;a1f561d5-46a4-4e7d-ba3b-3b9b3bcedd97&quot;,&quot;AttributeName&quot;:&quot;All&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;All&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:false,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:2,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&quot;AttributeName&quot;:&quot;MPU Level 3&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;MPU Level 3&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&amp;StoresMPULevel3&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:6,&quot;ShowFilterAs&quot;:&quot;TileView&quot;}],&quot;DataProperties&quot;:{&quot;IncludeNulls&quot;:false,&quot;NullsForFinerGrainSelect&quot;:false,&quot;NullsForUnrelatedAttrSelect&quot;:false,&quot;SubTotalsType&quot;:&quot;NoSubtotals&quot;,&quot;MaxRecordLimit&quot;:10000}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${Token}</stringProp>
+                </elementProp>
+                <elementProp name="o9-uielement" elementType="Header">
+                  <stringProp name="Header.name">o9-uielement</stringProp>
+                  <stringProp name="Header.value">#/Assortment%20Planning/Store%20Master/Store%20Master|View|e9e67d47-9d02-4da3-9435-1585f07dc46e</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="Client-Locale" elementType="Header">
+                  <stringProp name="Header.name">Client-Locale</stringProp>
+                  <stringProp name="Header.value">en-US</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4 - Load Version Filter" enabled="true">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">0</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">api/v2/widget/getdata</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;LevelAttributes&quot;:[{&quot;Id&quot;:&quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&quot;AttributeName&quot;:&quot;Version Name&quot;,&quot;Dimension&quot;:&quot;Version&quot;,&quot;DimensionId&quot;:130365,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Version Name&quot;,&quot;DimensionName&quot;:&quot;Version&quot;,&quot;OverrideFavSelection&quot;:false,&quot;IsSingleSelect&quot;:false,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:7,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;CurrencyFilter&quot;:false,&quot;IncludeAllMemberProperties&quot;:false,&quot;MemberProperties&quot;:[{&quot;Name&quot;:&quot;DisplayName&quot;,&quot;Sort&quot;:&quot;ascending&quot;,&quot;ExcludeFromSelect&quot;:true}]}],&quot;DataProperties&quot;:{&quot;IncludeNulls&quot;:false,&quot;NullsForFinerGrainSelect&quot;:false,&quot;NullsForUnrelatedAttrSelect&quot;:false,&quot;SubTotalsType&quot;:&quot;NoSubtotals&quot;,&quot;MaxRecordLimit&quot;:10000}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${Token}</stringProp>
+                </elementProp>
+                <elementProp name="o9-uielement" elementType="Header">
+                  <stringProp name="Header.name">o9-uielement</stringProp>
+                  <stringProp name="Header.value">#/Assortment%20Planning/Store%20Master/Store%20Master|View|e9e67d47-9d02-4da3-9435-1585f07dc46e</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="Client-Locale" elementType="Header">
+                  <stringProp name="Header.name">Client-Locale</stringProp>
+                  <stringProp name="Header.value">en-US</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5 - Load Location Management Data" enabled="true">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">0</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">api/v2/widget/getdata/</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;RegularMeasures&quot;: [&#xd;
+		{&#xd;
+			&quot;Name&quot;: &quot;DDS_Store_Opening_Date&quot;,&#xd;
+			&quot;Id&quot;: &quot;ae244b1c-08a8-4a13-adfb-b028b9c16fff&quot;,&#xd;
+			&quot;IsVisible&quot;: true,&#xd;
+			&quot;IsEditable&quot;: false,&#xd;
+			&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+			&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+			&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+			&quot;FormatString&quot;: &quot;&quot;,&#xd;
+			&quot;ColumnWidth&quot;: 0,&#xd;
+			&quot;Sort&quot;: &quot;&quot;,&#xd;
+			&quot;UseExcelAggregation&quot;: false,&#xd;
+			&quot;MeasureFormatting&quot;: [&#xd;
+				{&#xd;
+					&quot;BGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;FGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+			&quot;ShowInfo&quot;: {&#xd;
+				&quot;ShowDetail&quot;: true,&#xd;
+				&quot;ShowPulse&quot;: true,&#xd;
+				&quot;ShowTask&quot;: true,&#xd;
+				&quot;ShowMarketIntelligence&quot;: true&#xd;
+			},&#xd;
+			&quot;ChildMeasureCollections&quot;: null,&#xd;
+			&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+			&quot;Guid&quot;: &quot;ae244b1c-08a8-4a13-adfb-b028b9c16fff&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Name&quot;: &quot;DDS_Store_Closing_Date&quot;,&#xd;
+			&quot;Id&quot;: &quot;1872b33c-01a1-4be2-9bd1-cba57bcffe54&quot;,&#xd;
+			&quot;IsVisible&quot;: true,&#xd;
+			&quot;IsEditable&quot;: false,&#xd;
+			&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+			&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+			&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+			&quot;FormatString&quot;: &quot;&quot;,&#xd;
+			&quot;ColumnWidth&quot;: 0,&#xd;
+			&quot;Sort&quot;: &quot;&quot;,&#xd;
+			&quot;UseExcelAggregation&quot;: false,&#xd;
+			&quot;MeasureFormatting&quot;: [&#xd;
+				{&#xd;
+					&quot;BGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;FGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+			&quot;ShowInfo&quot;: {&#xd;
+				&quot;ShowDetail&quot;: true,&#xd;
+				&quot;ShowPulse&quot;: true,&#xd;
+				&quot;ShowTask&quot;: true,&#xd;
+				&quot;ShowMarketIntelligence&quot;: true&#xd;
+			},&#xd;
+			&quot;ChildMeasureCollections&quot;: null,&#xd;
+			&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+			&quot;Guid&quot;: &quot;1872b33c-01a1-4be2-9bd1-cba57bcffe54&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Name&quot;: &quot;DDS_Store_Concept&quot;,&#xd;
+			&quot;Id&quot;: &quot;ad0a04f0-ec24-47b8-b5eb-197e1819ba8e&quot;,&#xd;
+			&quot;IsVisible&quot;: true,&#xd;
+			&quot;IsEditable&quot;: true,&#xd;
+			&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+			&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+			&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+			&quot;FormatString&quot;: &quot;&quot;,&#xd;
+			&quot;ColumnWidth&quot;: 0,&#xd;
+			&quot;Sort&quot;: &quot;&quot;,&#xd;
+			&quot;UseExcelAggregation&quot;: false,&#xd;
+			&quot;MeasureFormatting&quot;: [&#xd;
+				{&#xd;
+					&quot;BGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;FGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+			&quot;ShowInfo&quot;: {&#xd;
+				&quot;ShowDetail&quot;: true,&#xd;
+				&quot;ShowPulse&quot;: true,&#xd;
+				&quot;ShowTask&quot;: true,&#xd;
+				&quot;ShowMarketIntelligence&quot;: true&#xd;
+			},&#xd;
+			&quot;ChildMeasureCollections&quot;: null,&#xd;
+			&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+			&quot;Guid&quot;: &quot;ad0a04f0-ec24-47b8-b5eb-197e1819ba8e&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Name&quot;: &quot;DDS_Like_Store&quot;,&#xd;
+			&quot;Id&quot;: &quot;33964e14-c9d4-4594-917a-a8cdd1c38cf3&quot;,&#xd;
+			&quot;IsVisible&quot;: true,&#xd;
+			&quot;IsEditable&quot;: true,&#xd;
+			&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+			&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+			&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+			&quot;FormatString&quot;: &quot;&quot;,&#xd;
+			&quot;ColumnWidth&quot;: 0,&#xd;
+			&quot;Sort&quot;: &quot;&quot;,&#xd;
+			&quot;UseExcelAggregation&quot;: false,&#xd;
+			&quot;MeasureFormatting&quot;: [&#xd;
+				{&#xd;
+					&quot;BGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;FGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+			&quot;ShowInfo&quot;: {&#xd;
+				&quot;ShowDetail&quot;: true,&#xd;
+				&quot;ShowPulse&quot;: true,&#xd;
+				&quot;ShowTask&quot;: true,&#xd;
+				&quot;ShowMarketIntelligence&quot;: true&#xd;
+			},&#xd;
+			&quot;ChildMeasureCollections&quot;: null,&#xd;
+			&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+			&quot;Guid&quot;: &quot;33964e14-c9d4-4594-917a-a8cdd1c38cf3&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Name&quot;: &quot;DDS_Store_Exclude&quot;,&#xd;
+			&quot;Id&quot;: &quot;5f7b5dbd-2e3b-42c1-a35d-db95c783ba60&quot;,&#xd;
+			&quot;IsVisible&quot;: true,&#xd;
+			&quot;IsEditable&quot;: true,&#xd;
+			&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+			&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+			&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+			&quot;FormatString&quot;: &quot;&quot;,&#xd;
+			&quot;ColumnWidth&quot;: 0,&#xd;
+			&quot;Sort&quot;: &quot;&quot;,&#xd;
+			&quot;UseExcelAggregation&quot;: false,&#xd;
+			&quot;MeasureFormatting&quot;: [&#xd;
+				{&#xd;
+					&quot;BGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;FGCOLOR&quot;: &quot;&quot;,&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+			&quot;ShowInfo&quot;: {&#xd;
+				&quot;ShowDetail&quot;: true,&#xd;
+				&quot;ShowPulse&quot;: true,&#xd;
+				&quot;ShowTask&quot;: true,&#xd;
+				&quot;ShowMarketIntelligence&quot;: true&#xd;
+			},&#xd;
+			&quot;ChildMeasureCollections&quot;: null,&#xd;
+			&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+			&quot;Guid&quot;: &quot;5f7b5dbd-2e3b-42c1-a35d-db95c783ba60&quot;&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;LevelAttributes&quot;: [&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Axis&quot;: &quot;row&quot;,&#xd;
+			&quot;ShowInfo&quot;: {&#xd;
+				&quot;ShowDetail&quot;: true,&#xd;
+				&quot;ShowPulse&quot;: true,&#xd;
+				&quot;ShowTask&quot;: true,&#xd;
+				&quot;ShowMarketIntelligence&quot;: true&#xd;
+			},&#xd;
+			&quot;IsVisible&quot;: true,&#xd;
+			&quot;IsAttributeRequired&quot;: true,&#xd;
+			&quot;ShowSubtotal&quot;: false,&#xd;
+			&quot;ShowMemberConditionalFormatting&quot;: false,&#xd;
+			&quot;UOMMember&quot;: null,&#xd;
+			&quot;DisplayName&quot;: &quot;&quot;,&#xd;
+			&quot;ShortName&quot;: &quot;&quot;,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;JoinWithGraph&quot;: false,&#xd;
+			&quot;JoinGraphName&quot;: null,&#xd;
+			&quot;JoinWithNode&quot;: &quot;FROM&quot;,&#xd;
+			&quot;Name&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Guid&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU Level 3&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Axis&quot;: &quot;row&quot;,&#xd;
+			&quot;ShowInfo&quot;: {&#xd;
+				&quot;ShowDetail&quot;: true,&#xd;
+				&quot;ShowPulse&quot;: true,&#xd;
+				&quot;ShowTask&quot;: true,&#xd;
+				&quot;ShowMarketIntelligence&quot;: true&#xd;
+			},&#xd;
+			&quot;IsVisible&quot;: true,&#xd;
+			&quot;IsAttributeRequired&quot;: true,&#xd;
+			&quot;ShowSubtotal&quot;: false,&#xd;
+			&quot;ShowMemberConditionalFormatting&quot;: false,&#xd;
+			&quot;UOMMember&quot;: null,&#xd;
+			&quot;DisplayName&quot;: &quot;&quot;,&#xd;
+			&quot;ShortName&quot;: &quot;&quot;,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;JoinWithGraph&quot;: false,&#xd;
+			&quot;JoinGraphName&quot;: null,&#xd;
+			&quot;JoinWithNode&quot;: &quot;FROM&quot;,&#xd;
+			&quot;Name&quot;: &quot;MPU Level 3&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Guid&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU Level 2&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Axis&quot;: &quot;row&quot;,&#xd;
+			&quot;ShowInfo&quot;: {&#xd;
+				&quot;ShowDetail&quot;: true,&#xd;
+				&quot;ShowPulse&quot;: true,&#xd;
+				&quot;ShowTask&quot;: true,&#xd;
+				&quot;ShowMarketIntelligence&quot;: true&#xd;
+			},&#xd;
+			&quot;IsVisible&quot;: true,&#xd;
+			&quot;IsAttributeRequired&quot;: true,&#xd;
+			&quot;ShowSubtotal&quot;: false,&#xd;
+			&quot;ShowMemberConditionalFormatting&quot;: false,&#xd;
+			&quot;UOMMember&quot;: null,&#xd;
+			&quot;DisplayName&quot;: &quot;&quot;,&#xd;
+			&quot;ShortName&quot;: &quot;&quot;,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;JoinWithGraph&quot;: false,&#xd;
+			&quot;JoinGraphName&quot;: null,&#xd;
+			&quot;JoinWithNode&quot;: &quot;FROM&quot;,&#xd;
+			&quot;Name&quot;: &quot;MPU Level 2&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Guid&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;6a28e8b5-6496-4609-9e3f-7a7794838fdd&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Location&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Location&quot;,&#xd;
+			&quot;Axis&quot;: &quot;row&quot;,&#xd;
+			&quot;ShowInfo&quot;: {&#xd;
+				&quot;ShowDetail&quot;: true,&#xd;
+				&quot;ShowPulse&quot;: true,&#xd;
+				&quot;ShowTask&quot;: true,&#xd;
+				&quot;ShowMarketIntelligence&quot;: true&#xd;
+			},&#xd;
+			&quot;IsVisible&quot;: true,&#xd;
+			&quot;IsAttributeRequired&quot;: true,&#xd;
+			&quot;ShowSubtotal&quot;: false,&#xd;
+			&quot;ShowMemberConditionalFormatting&quot;: false,&#xd;
+			&quot;UOMMember&quot;: null,&#xd;
+			&quot;DisplayName&quot;: &quot;&quot;,&#xd;
+			&quot;ShortName&quot;: &quot;&quot;,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;JoinWithGraph&quot;: false,&#xd;
+			&quot;JoinGraphName&quot;: null,&#xd;
+			&quot;JoinWithNode&quot;: &quot;FROM&quot;,&#xd;
+			&quot;MemberProperties&quot;: [&#xd;
+				{&#xd;
+					&quot;Id&quot;: &quot;ccd67bae-11bb-45bc-8667-b0b8a4d1f10c&quot;,&#xd;
+					&quot;Name&quot;: &quot;LocationName&quot;,&#xd;
+					&quot;IsVisible&quot;: true,&#xd;
+					&quot;ShowInLocalTimeZone&quot;: false&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;Location&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Location&quot;,&#xd;
+			&quot;Guid&quot;: &quot;6a28e8b5-6496-4609-9e3f-7a7794838fdd&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Geo&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Location&quot;,&#xd;
+			&quot;DimensionId&quot;: 130363,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${Geo}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;Geo&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Location&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 0,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;2b5f791eef191a788e82a1bf569cea29&quot;: &quot;2b5f791eef191a788e82a1bf569cea29&quot;&#xd;
+			},&#xd;
+			&quot;UserBagSelection&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Country&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Location&quot;,&#xd;
+			&quot;DimensionId&quot;: 130363,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${Country}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;Country&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Location&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&amp;NACountry&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 1,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;2b5f791eef191a788e82a1bf569cea29&quot;: &quot;2b5f791eef191a788e82a1bf569cea29&quot;&#xd;
+			},&#xd;
+			&quot;UserBagSelection&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&amp;NACountry&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;a1f561d5-46a4-4e7d-ba3b-3b9b3bcedd97&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;All&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: 130366,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: true,&#xd;
+			&quot;SelectedMembers&quot;: [],&#xd;
+			&quot;Name&quot;: &quot;All&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: false,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 2,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;: &quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;&#xd;
+			},&#xd;
+			&quot;UserBagSelection&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;a1f561d5-46a4-4e7d-ba3b-3b9b3bcedd97&quot;,&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: 130366,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${Channel}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 3,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;: &quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;&#xd;
+			},&#xd;
+			&quot;UserBagSelection&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: 130366,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: true,&#xd;
+			&quot;SelectedMembers&quot;: [],&#xd;
+			&quot;Name&quot;: &quot;MPU&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: false,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 4,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;: &quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;&#xd;
+			},&#xd;
+			&quot;UserBagSelection&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU Level 2&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: 130366,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${MPU Level 2}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;MPU Level 2&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 5,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;: &quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;&#xd;
+			},&#xd;
+			&quot;UserBagSelection&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU Level 3&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: 130366,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${MPU Level 3}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;MPU Level 3&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&amp;StoresMPULevel3&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 6,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;: &quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;&#xd;
+			},&#xd;
+			&quot;UserBagSelection&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&amp;StoresMPULevel3&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Version Name&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Version&quot;,&#xd;
+			&quot;DimensionId&quot;: 130365,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;CurrentWorkingView&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;Version Name&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Version&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: false,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 7,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;b1f49fd0926b7426ab3a0d34ad493e3d&quot;: &quot;b1f49fd0926b7426ab3a0d34ad493e3d&quot;&#xd;
+			},&#xd;
+			&quot;UserBagSelection&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;NamedSets&quot;: [],&#xd;
+	&quot;DataProperties&quot;: {&#xd;
+		&quot;IncludeInactiveMembers&quot;: false,&#xd;
+		&quot;IncludeNulls&quot;: false,&#xd;
+		&quot;NullsForFinerGrainSelect&quot;: false,&#xd;
+		&quot;NullsForUnrelatedAttrSelect&quot;: false,&#xd;
+		&quot;RequireEditValidation&quot;: false,&#xd;
+		&quot;SubTotalsType&quot;: &quot;NoSubtotals&quot;,&#xd;
+		&quot;IncludeNullsForSeries&quot;: &quot;&quot;,&#xd;
+		&quot;AssociationMeasureExpression&quot;: &quot;&quot;,&#xd;
+		&quot;ExcludeConditionalFormatting&quot;: true,&#xd;
+		&quot;NodeTraversalSteps&quot;: &quot;ALL&quot;&#xd;
+	},&#xd;
+	&quot;AssociationMeasures&quot;: [&#xd;
+		{&#xd;
+			&quot;MeasureFilterIBPLExpression&quot;: &quot;~isnull(Measure.[DDS_Store_MPU_Assoc])&quot;,&#xd;
+			&quot;MeasureFilterScope&quot;: &quot;Post Filter&quot;&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;AssociationMeasureExpressions&quot;: [&#xd;
+		{&#xd;
+			&quot;Expression&quot;: &quot;&quot;&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;MeasureValueFilters&quot;: [],&#xd;
+	&quot;TransientMeasures&quot;: [],&#xd;
+	&quot;PeggingAttributes&quot;: [],&#xd;
+	&quot;GraphRelations&quot;: []&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${Token}</stringProp>
+                </elementProp>
+                <elementProp name="o9-uielement" elementType="Header">
+                  <stringProp name="Header.name">o9-uielement</stringProp>
+                  <stringProp name="Header.value">#/Assortment%20Planning/Store%20Master/Store%20Master|Store_Channel_Master|e9e67d47-9d02-4da3-9435-1585f07dc46e</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="Client-Locale" elementType="Header">
+                  <stringProp name="Header.name">Client-Locale</stringProp>
+                  <stringProp name="Header.value">en-US</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="T02 - Navigate to Location Management" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="2 - Load Country Filter" enabled="true">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">0</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">api/v2/widget/getdata</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;LevelAttributes&quot;:[{&quot;Id&quot;:&quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&quot;AttributeName&quot;:&quot;Country&quot;,&quot;Dimension&quot;:&quot;Location&quot;,&quot;DimensionId&quot;:130363,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Country&quot;,&quot;DimensionName&quot;:&quot;Location&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:1,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false,&quot;MemberProperties&quot;:[{&quot;Name&quot;:&quot;DisplayName&quot;,&quot;Sort&quot;:&quot;ascending&quot;,&quot;ExcludeFromSelect&quot;:true}]},{&quot;Id&quot;:&quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&quot;AttributeName&quot;:&quot;Geo&quot;,&quot;Dimension&quot;:&quot;Location&quot;,&quot;DimensionId&quot;:130363,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Geo&quot;,&quot;DimensionName&quot;:&quot;Location&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:0,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&quot;AttributeName&quot;:&quot;Country&quot;,&quot;Dimension&quot;:&quot;Location&quot;,&quot;DimensionId&quot;:130363,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Country&quot;,&quot;DimensionName&quot;:&quot;Location&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&amp;NACountry&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:1,&quot;ShowFilterAs&quot;:&quot;TileView&quot;}],&quot;DataProperties&quot;:{&quot;IncludeNulls&quot;:false,&quot;NullsForFinerGrainSelect&quot;:false,&quot;NullsForUnrelatedAttrSelect&quot;:false,&quot;SubTotalsType&quot;:&quot;NoSubtotals&quot;,&quot;MaxRecordLimit&quot;:10000}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${Token}</stringProp>
+                </elementProp>
+                <elementProp name="o9-uielement" elementType="Header">
+                  <stringProp name="Header.name">o9-uielement</stringProp>
+                  <stringProp name="Header.value">#/Assortment%20Planning/Store%20Master/Store%20Master|Store_Channel_Master|a6c1deff-e57d-4577-92f4-3e8b6e7542b7</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="Client-Locale" elementType="Header">
+                  <stringProp name="Header.name">Client-Locale</stringProp>
+                  <stringProp name="Header.value">en-US</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3 - Load Channel Filter" enabled="true">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">0</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">api/v2/widget/getdata</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;LevelAttributes&quot;:[{&quot;Id&quot;:&quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&quot;AttributeName&quot;:&quot;MPU Level 3&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;MPU Level 3&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:6,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false,&quot;MemberProperties&quot;:[{&quot;Name&quot;:&quot;DisplayName&quot;,&quot;Sort&quot;:&quot;ascending&quot;,&quot;ExcludeFromSelect&quot;:true}]},{&quot;Id&quot;:&quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&quot;AttributeName&quot;:&quot;MPU Level 2&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;MPU Level 2&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:5,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&quot;AttributeName&quot;:&quot;MPU&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;MPU&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:false,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:4,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&quot;AttributeName&quot;:&quot;Channel&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Channel&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:3,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;a1f561d5-46a4-4e7d-ba3b-3b9b3bcedd97&quot;,&quot;AttributeName&quot;:&quot;All&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;All&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:false,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:2,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;IncludeAllMemberProperties&quot;:false},{&quot;Id&quot;:&quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&quot;AttributeName&quot;:&quot;MPU Level 3&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;MPU Level 3&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&amp;StoresMPULevel3&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:6,&quot;ShowFilterAs&quot;:&quot;TileView&quot;}],&quot;DataProperties&quot;:{&quot;IncludeNulls&quot;:false,&quot;NullsForFinerGrainSelect&quot;:false,&quot;NullsForUnrelatedAttrSelect&quot;:false,&quot;SubTotalsType&quot;:&quot;NoSubtotals&quot;,&quot;MaxRecordLimit&quot;:10000}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${Token}</stringProp>
+                </elementProp>
+                <elementProp name="o9-uielement" elementType="Header">
+                  <stringProp name="Header.name">o9-uielement</stringProp>
+                  <stringProp name="Header.value">#/Assortment%20Planning/Store%20Master/Store%20Master|Store_Channel_Master|a6c1deff-e57d-4577-92f4-3e8b6e7542b7</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="Client-Locale" elementType="Header">
+                  <stringProp name="Header.name">Client-Locale</stringProp>
+                  <stringProp name="Header.value">en-US</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4 - Load Version Filter" enabled="true">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">0</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">api/v2/widget/getdata</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;LevelAttributes&quot;:[{&quot;Id&quot;:&quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&quot;AttributeName&quot;:&quot;Version Name&quot;,&quot;Dimension&quot;:&quot;Version&quot;,&quot;DimensionId&quot;:130365,&quot;IsFilter&quot;:false,&quot;Axis&quot;:&quot;row&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;Version Name&quot;,&quot;DimensionName&quot;:&quot;Version&quot;,&quot;OverrideFavSelection&quot;:false,&quot;IsSingleSelect&quot;:false,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:7,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;CurrencyFilter&quot;:false,&quot;IncludeAllMemberProperties&quot;:false,&quot;MemberProperties&quot;:[{&quot;Name&quot;:&quot;DisplayName&quot;,&quot;Sort&quot;:&quot;ascending&quot;,&quot;ExcludeFromSelect&quot;:true}]}],&quot;DataProperties&quot;:{&quot;IncludeNulls&quot;:false,&quot;NullsForFinerGrainSelect&quot;:false,&quot;NullsForUnrelatedAttrSelect&quot;:false,&quot;SubTotalsType&quot;:&quot;NoSubtotals&quot;,&quot;MaxRecordLimit&quot;:10000}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${Token}</stringProp>
+                </elementProp>
+                <elementProp name="o9-uielement" elementType="Header">
+                  <stringProp name="Header.name">o9-uielement</stringProp>
+                  <stringProp name="Header.value">#/Assortment%20Planning/Store%20Master/Store%20Master|Store_Channel_Master|a6c1deff-e57d-4577-92f4-3e8b6e7542b7</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="Client-Locale" elementType="Header">
+                  <stringProp name="Header.name">Client-Locale</stringProp>
+                  <stringProp name="Header.value">en-US</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5 - Load Location Management Data" enabled="true">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">0</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">api/v2/widget/getdata/</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;RegularMeasures&quot;:[{&quot;Name&quot;:&quot;DDS_Store_Opening_Date&quot;,&quot;Id&quot;:&quot;ae244b1c-08a8-4a13-adfb-b028b9c16fff&quot;,&quot;IsVisible&quot;:true,&quot;IsEditable&quot;:false,&quot;ShowInLocalTimeZone&quot;:false,&quot;RenderType&quot;:&quot;Value&quot;,&quot;Alignment&quot;:&quot;MiddleRight&quot;,&quot;FormatString&quot;:&quot;&quot;,&quot;ColumnWidth&quot;:0,&quot;Sort&quot;:&quot;&quot;,&quot;UseExcelAggregation&quot;:false,&quot;MeasureFormatting&quot;:[{&quot;BGCOLOR&quot;:&quot;&quot;,&quot;FGCOLOR&quot;:&quot;&quot;,&quot;ApplyForData&quot;:false,&quot;ApplyForHeader&quot;:false}],&quot;TimeHorizon&quot;:&quot;&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;ChildMeasureCollections&quot;:null,&quot;IsMultiDimensionProperty&quot;:false,&quot;Guid&quot;:&quot;ae244b1c-08a8-4a13-adfb-b028b9c16fff&quot;},{&quot;Name&quot;:&quot;DDS_Store_Closing_Date&quot;,&quot;Id&quot;:&quot;1872b33c-01a1-4be2-9bd1-cba57bcffe54&quot;,&quot;IsVisible&quot;:true,&quot;IsEditable&quot;:false,&quot;ShowInLocalTimeZone&quot;:false,&quot;RenderType&quot;:&quot;Value&quot;,&quot;Alignment&quot;:&quot;MiddleRight&quot;,&quot;FormatString&quot;:&quot;&quot;,&quot;ColumnWidth&quot;:0,&quot;Sort&quot;:&quot;&quot;,&quot;UseExcelAggregation&quot;:false,&quot;MeasureFormatting&quot;:[{&quot;BGCOLOR&quot;:&quot;&quot;,&quot;FGCOLOR&quot;:&quot;&quot;,&quot;ApplyForData&quot;:false,&quot;ApplyForHeader&quot;:false}],&quot;TimeHorizon&quot;:&quot;&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;ChildMeasureCollections&quot;:null,&quot;IsMultiDimensionProperty&quot;:false,&quot;Guid&quot;:&quot;1872b33c-01a1-4be2-9bd1-cba57bcffe54&quot;},{&quot;Name&quot;:&quot;DDS_Store_Concept&quot;,&quot;Id&quot;:&quot;ad0a04f0-ec24-47b8-b5eb-197e1819ba8e&quot;,&quot;IsVisible&quot;:true,&quot;IsEditable&quot;:true,&quot;ShowInLocalTimeZone&quot;:false,&quot;RenderType&quot;:&quot;Value&quot;,&quot;Alignment&quot;:&quot;MiddleRight&quot;,&quot;FormatString&quot;:&quot;&quot;,&quot;ColumnWidth&quot;:0,&quot;Sort&quot;:&quot;&quot;,&quot;UseExcelAggregation&quot;:false,&quot;MeasureFormatting&quot;:[{&quot;BGCOLOR&quot;:&quot;&quot;,&quot;FGCOLOR&quot;:&quot;&quot;,&quot;ApplyForData&quot;:false,&quot;ApplyForHeader&quot;:false}],&quot;TimeHorizon&quot;:&quot;&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;ChildMeasureCollections&quot;:null,&quot;IsMultiDimensionProperty&quot;:false,&quot;Guid&quot;:&quot;ad0a04f0-ec24-47b8-b5eb-197e1819ba8e&quot;},{&quot;Name&quot;:&quot;DDS_Like_Store&quot;,&quot;Id&quot;:&quot;33964e14-c9d4-4594-917a-a8cdd1c38cf3&quot;,&quot;IsVisible&quot;:true,&quot;IsEditable&quot;:true,&quot;ShowInLocalTimeZone&quot;:false,&quot;RenderType&quot;:&quot;Value&quot;,&quot;Alignment&quot;:&quot;MiddleRight&quot;,&quot;FormatString&quot;:&quot;&quot;,&quot;ColumnWidth&quot;:0,&quot;Sort&quot;:&quot;&quot;,&quot;UseExcelAggregation&quot;:false,&quot;MeasureFormatting&quot;:[{&quot;BGCOLOR&quot;:&quot;&quot;,&quot;FGCOLOR&quot;:&quot;&quot;,&quot;ApplyForData&quot;:false,&quot;ApplyForHeader&quot;:false}],&quot;TimeHorizon&quot;:&quot;&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;ChildMeasureCollections&quot;:null,&quot;IsMultiDimensionProperty&quot;:false,&quot;Guid&quot;:&quot;33964e14-c9d4-4594-917a-a8cdd1c38cf3&quot;},{&quot;Name&quot;:&quot;DDS_Store_Exclude&quot;,&quot;Id&quot;:&quot;5f7b5dbd-2e3b-42c1-a35d-db95c783ba60&quot;,&quot;IsVisible&quot;:true,&quot;IsEditable&quot;:true,&quot;ShowInLocalTimeZone&quot;:false,&quot;RenderType&quot;:&quot;Value&quot;,&quot;Alignment&quot;:&quot;MiddleRight&quot;,&quot;FormatString&quot;:&quot;&quot;,&quot;ColumnWidth&quot;:0,&quot;Sort&quot;:&quot;&quot;,&quot;UseExcelAggregation&quot;:false,&quot;MeasureFormatting&quot;:[{&quot;BGCOLOR&quot;:&quot;&quot;,&quot;FGCOLOR&quot;:&quot;&quot;,&quot;ApplyForData&quot;:false,&quot;ApplyForHeader&quot;:false}],&quot;TimeHorizon&quot;:&quot;&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;ChildMeasureCollections&quot;:null,&quot;IsMultiDimensionProperty&quot;:false,&quot;Guid&quot;:&quot;5f7b5dbd-2e3b-42c1-a35d-db95c783ba60&quot;}],&quot;LevelAttributes&quot;:[{&quot;Id&quot;:&quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&quot;AttributeName&quot;:&quot;Version Name&quot;,&quot;Dimension&quot;:&quot;Version&quot;,&quot;Axis&quot;:&quot;row&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;IsVisible&quot;:true,&quot;IsAttributeRequired&quot;:false,&quot;ShowSubtotal&quot;:false,&quot;ShowMemberConditionalFormatting&quot;:false,&quot;UOMMember&quot;:null,&quot;DisplayName&quot;:&quot;&quot;,&quot;ShortName&quot;:&quot;&quot;,&quot;SortBy&quot;:&quot;&quot;,&quot;JoinWithGraph&quot;:false,&quot;JoinGraphName&quot;:null,&quot;JoinWithNode&quot;:&quot;FROM&quot;,&quot;Name&quot;:&quot;Version Name&quot;,&quot;DimensionName&quot;:&quot;Version&quot;,&quot;Guid&quot;:&quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;},{&quot;Id&quot;:&quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&quot;AttributeName&quot;:&quot;Channel&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;Axis&quot;:&quot;row&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;IsVisible&quot;:true,&quot;IsAttributeRequired&quot;:true,&quot;ShowSubtotal&quot;:false,&quot;ShowMemberConditionalFormatting&quot;:false,&quot;UOMMember&quot;:null,&quot;DisplayName&quot;:&quot;&quot;,&quot;ShortName&quot;:&quot;&quot;,&quot;SortBy&quot;:&quot;&quot;,&quot;JoinWithGraph&quot;:false,&quot;JoinGraphName&quot;:null,&quot;JoinWithNode&quot;:&quot;FROM&quot;,&quot;Name&quot;:&quot;Channel&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;Guid&quot;:&quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;},{&quot;Id&quot;:&quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&quot;AttributeName&quot;:&quot;MPU Level 3&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;Axis&quot;:&quot;row&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;IsVisible&quot;:true,&quot;IsAttributeRequired&quot;:true,&quot;ShowSubtotal&quot;:false,&quot;ShowMemberConditionalFormatting&quot;:false,&quot;UOMMember&quot;:null,&quot;DisplayName&quot;:&quot;&quot;,&quot;ShortName&quot;:&quot;&quot;,&quot;SortBy&quot;:&quot;&quot;,&quot;JoinWithGraph&quot;:false,&quot;JoinGraphName&quot;:null,&quot;JoinWithNode&quot;:&quot;FROM&quot;,&quot;Name&quot;:&quot;MPU Level 3&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;Guid&quot;:&quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;},{&quot;Id&quot;:&quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&quot;AttributeName&quot;:&quot;MPU Level 2&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;Axis&quot;:&quot;row&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;IsVisible&quot;:true,&quot;IsAttributeRequired&quot;:true,&quot;ShowSubtotal&quot;:false,&quot;ShowMemberConditionalFormatting&quot;:false,&quot;UOMMember&quot;:null,&quot;DisplayName&quot;:&quot;&quot;,&quot;ShortName&quot;:&quot;&quot;,&quot;SortBy&quot;:&quot;&quot;,&quot;JoinWithGraph&quot;:false,&quot;JoinGraphName&quot;:null,&quot;JoinWithNode&quot;:&quot;FROM&quot;,&quot;Name&quot;:&quot;MPU Level 2&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;Guid&quot;:&quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;},{&quot;Id&quot;:&quot;6a28e8b5-6496-4609-9e3f-7a7794838fdd&quot;,&quot;AttributeName&quot;:&quot;Location&quot;,&quot;Dimension&quot;:&quot;Location&quot;,&quot;Axis&quot;:&quot;row&quot;,&quot;ShowInfo&quot;:{&quot;ShowDetail&quot;:true,&quot;ShowPulse&quot;:true,&quot;ShowTask&quot;:true,&quot;ShowMarketIntelligence&quot;:true},&quot;IsVisible&quot;:true,&quot;IsAttributeRequired&quot;:true,&quot;ShowSubtotal&quot;:false,&quot;ShowMemberConditionalFormatting&quot;:false,&quot;UOMMember&quot;:null,&quot;DisplayName&quot;:&quot;&quot;,&quot;ShortName&quot;:&quot;&quot;,&quot;SortBy&quot;:&quot;&quot;,&quot;JoinWithGraph&quot;:false,&quot;JoinGraphName&quot;:null,&quot;JoinWithNode&quot;:&quot;FROM&quot;,&quot;MemberProperties&quot;:[{&quot;Id&quot;:&quot;ccd67bae-11bb-45bc-8667-b0b8a4d1f10c&quot;,&quot;Name&quot;:&quot;LocationName&quot;,&quot;IsVisible&quot;:true,&quot;ShowInLocalTimeZone&quot;:false}],&quot;Name&quot;:&quot;Location&quot;,&quot;DimensionName&quot;:&quot;Location&quot;,&quot;Guid&quot;:&quot;6a28e8b5-6496-4609-9e3f-7a7794838fdd&quot;},{&quot;Id&quot;:&quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&quot;AttributeName&quot;:&quot;Geo&quot;,&quot;Dimension&quot;:&quot;Location&quot;,&quot;DimensionId&quot;:130363,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:false,&quot;SelectedMembers&quot;:[{&quot;Name&quot;:&quot;NORTH AMERICA&quot;}],&quot;Name&quot;:&quot;Geo&quot;,&quot;DimensionName&quot;:&quot;Location&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:0,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;FiltersMap&quot;:{&quot;70e8f1d6bf619473f70c85dd51148884&quot;:&quot;70e8f1d6bf619473f70c85dd51148884&quot;},&quot;UserBagSelection&quot;:[],&quot;Guid&quot;:&quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&quot;SelectedMembersIbplExpression&quot;:&quot;&quot;},{&quot;Id&quot;:&quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&quot;AttributeName&quot;:&quot;Country&quot;,&quot;Dimension&quot;:&quot;Location&quot;,&quot;DimensionId&quot;:130363,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:false,&quot;SelectedMembers&quot;:[{&quot;Name&quot;:&quot;UNITED STATES OF AMERICA&quot;}],&quot;Name&quot;:&quot;Country&quot;,&quot;DimensionName&quot;:&quot;Location&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&amp;NACountry&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:1,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;FiltersMap&quot;:{&quot;70e8f1d6bf619473f70c85dd51148884&quot;:&quot;70e8f1d6bf619473f70c85dd51148884&quot;},&quot;UserBagSelection&quot;:[],&quot;Guid&quot;:&quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&quot;SelectedMembersIbplExpression&quot;:&quot;&amp;NACountry&quot;},{&quot;Id&quot;:&quot;a1f561d5-46a4-4e7d-ba3b-3b9b3bcedd97&quot;,&quot;AttributeName&quot;:&quot;All&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;All&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:false,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:2,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;FiltersMap&quot;:{&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;:&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;},&quot;UserBagSelection&quot;:[],&quot;Guid&quot;:&quot;a1f561d5-46a4-4e7d-ba3b-3b9b3bcedd97&quot;,&quot;SelectedMembersIbplExpression&quot;:&quot;&quot;},{&quot;Id&quot;:&quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&quot;AttributeName&quot;:&quot;Channel&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:false,&quot;SelectedMembers&quot;:[{&quot;Name&quot;:&quot;NIKE FACTORY STORES&quot;}],&quot;Name&quot;:&quot;Channel&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:3,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;FiltersMap&quot;:{&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;:&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;},&quot;UserBagSelection&quot;:[],&quot;Guid&quot;:&quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&quot;SelectedMembersIbplExpression&quot;:&quot;&quot;},{&quot;Id&quot;:&quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&quot;AttributeName&quot;:&quot;MPU&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:true,&quot;SelectedMembers&quot;:[],&quot;Name&quot;:&quot;MPU&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:false,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:4,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;FiltersMap&quot;:{&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;:&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;},&quot;UserBagSelection&quot;:[],&quot;Guid&quot;:&quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&quot;SelectedMembersIbplExpression&quot;:&quot;&quot;},{&quot;Id&quot;:&quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&quot;AttributeName&quot;:&quot;MPU Level 2&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:false,&quot;SelectedMembers&quot;:[{&quot;Name&quot;:&quot;NIKE RETAIL FACTORY STORES&quot;}],&quot;Name&quot;:&quot;MPU Level 2&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:5,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;FiltersMap&quot;:{&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;:&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;},&quot;UserBagSelection&quot;:[],&quot;Guid&quot;:&quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&quot;SelectedMembersIbplExpression&quot;:&quot;&quot;},{&quot;Id&quot;:&quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&quot;AttributeName&quot;:&quot;MPU Level 3&quot;,&quot;Dimension&quot;:&quot;Channel&quot;,&quot;DimensionId&quot;:130366,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:false,&quot;SelectedMembers&quot;:[{&quot;Name&quot;:&quot;CLEARANCE&quot;}],&quot;Name&quot;:&quot;MPU Level 3&quot;,&quot;DimensionName&quot;:&quot;Channel&quot;,&quot;OverrideFavSelection&quot;:false,&quot;CurrencyFilter&quot;:false,&quot;IsSingleSelect&quot;:true,&quot;MemberFilterExpression&quot;:&quot;&amp;StoresMPULevel3&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:6,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;FiltersMap&quot;:{&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;:&quot;279400d79ca5fd8186c512d6ff6d5cf3&quot;},&quot;UserBagSelection&quot;:[],&quot;Guid&quot;:&quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&quot;SelectedMembersIbplExpression&quot;:&quot;&amp;StoresMPULevel3&quot;},{&quot;Id&quot;:&quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&quot;AttributeName&quot;:&quot;Version Name&quot;,&quot;Dimension&quot;:&quot;Version&quot;,&quot;DimensionId&quot;:130365,&quot;IsFilter&quot;:true,&quot;Axis&quot;:&quot;none&quot;,&quot;IsDefault&quot;:true,&quot;AllSelection&quot;:false,&quot;SelectedMembers&quot;:[{&quot;Name&quot;:&quot;CurrentWorkingView&quot;}],&quot;Name&quot;:&quot;Version Name&quot;,&quot;DimensionName&quot;:&quot;Version&quot;,&quot;OverrideFavSelection&quot;:false,&quot;IsSingleSelect&quot;:false,&quot;MemberFilterExpression&quot;:&quot;&quot;,&quot;DefaultValueExpression&quot;:&quot;&quot;,&quot;WorksheetLevelFilter&quot;:false,&quot;SortBy&quot;:&quot;&quot;,&quot;SortOrder&quot;:&quot;&quot;,&quot;IsNarrowYourSelection&quot;:false,&quot;Position&quot;:7,&quot;ShowFilterAs&quot;:&quot;TileView&quot;,&quot;CurrencyFilter&quot;:false,&quot;FiltersMap&quot;:{&quot;87981ad961af80c0f53e58105cb247a8&quot;:&quot;87981ad961af80c0f53e58105cb247a8&quot;},&quot;UserBagSelection&quot;:[],&quot;Guid&quot;:&quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&quot;SelectedMembersIbplExpression&quot;:&quot;&quot;}],&quot;NamedSets&quot;:[],&quot;DataProperties&quot;:{&quot;IncludeInactiveMembers&quot;:false,&quot;IncludeNulls&quot;:false,&quot;NullsForFinerGrainSelect&quot;:false,&quot;NullsForUnrelatedAttrSelect&quot;:false,&quot;RequireEditValidation&quot;:false,&quot;SubTotalsType&quot;:&quot;NoSubtotals&quot;,&quot;IncludeNullsForSeries&quot;:&quot;&quot;,&quot;AssociationMeasureExpression&quot;:&quot;&quot;,&quot;ExcludeConditionalFormatting&quot;:true,&quot;NodeTraversalSteps&quot;:&quot;ALL&quot;},&quot;AssociationMeasures&quot;:[{&quot;MeasureFilterIBPLExpression&quot;:&quot;~isnull(Measure.[DDS_Store_MPU_Assoc])&quot;,&quot;MeasureFilterScope&quot;:&quot;Post Filter&quot;}],&quot;AssociationMeasureExpressions&quot;:[{&quot;Expression&quot;:&quot;&quot;}],&quot;MeasureValueFilters&quot;:[],&quot;TransientMeasures&quot;:[],&quot;PeggingAttributes&quot;:[],&quot;GraphRelations&quot;:[]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${Token}</stringProp>
+                </elementProp>
+                <elementProp name="o9-uielement" elementType="Header">
+                  <stringProp name="Header.name">o9-uielement</stringProp>
+                  <stringProp name="Header.value">#/Assortment%20Planning/Store%20Master/Store%20Master|Store_Channel_Master|a6c1deff-e57d-4577-92f4-3e8b6e7542b7</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="Client-Locale" elementType="Header">
+                  <stringProp name="Header.name">Client-Locale</stringProp>
+                  <stringProp name="Header.value">en-US</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="T03 - Edit the Measure Location Management" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="6 - Adjust the Location Management Measure - ${Measure}" enabled="true">
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">api/v2/widget/update/celledit</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;Meta&quot;: [&#xd;
+		{&#xd;
+			&quot;DimensionName&quot;: &quot;Version&quot;,&#xd;
+			&quot;DimensionId&quot;: &quot;3b4860b9-b215-4192-bd7a-a76f377fc465&quot;,&#xd;
+			&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+			&quot;Alias&quot;: &quot;0&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Version Name&quot;,&#xd;
+			&quot;ApiName&quot;: null,&#xd;
+			&quot;AttributeKey&quot;: &quot;VersionKey&quot;,&#xd;
+			&quot;KeyDataType&quot;: &quot;integer&quot;,&#xd;
+			&quot;Name&quot;: &quot;Version Name&quot;,&#xd;
+			&quot;EdgeDirection&quot;: null,&#xd;
+			&quot;RelationshipType&quot;: null,&#xd;
+			&quot;DimensionValues&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;CurrentWorkingView&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TopologicalSortOrder&quot;: 0,&#xd;
+			&quot;AncestorAttributeNames&quot;: [&#xd;
+				&quot;Version Type&quot;&#xd;
+			],&#xd;
+			&quot;OrderBy&quot;: &quot;Name&quot;,&#xd;
+			&quot;DimensionTranslation&quot;: &quot;Version&quot;,&#xd;
+			&quot;Translation&quot;: &quot;Version Name&quot;,&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: &quot;eac8183b-ba7b-473c-bcb9-1a4beb43b9df&quot;,&#xd;
+			&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+			&quot;Alias&quot;: &quot;1&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;ApiName&quot;: null,&#xd;
+			&quot;AttributeKey&quot;: &quot;ChannelKey&quot;,&#xd;
+			&quot;KeyDataType&quot;: &quot;integer&quot;,&#xd;
+			&quot;Name&quot;: &quot;Channel&quot;,&#xd;
+			&quot;EdgeDirection&quot;: null,&#xd;
+			&quot;RelationshipType&quot;: null,&#xd;
+			&quot;DimensionValues&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${Channel}&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TopologicalSortOrder&quot;: 4,&#xd;
+			&quot;AncestorAttributeNames&quot;: [&#xd;
+				&quot;Channel Type&quot;,&#xd;
+				&quot;All&quot;&#xd;
+			],&#xd;
+			&quot;OrderBy&quot;: &quot;Name&quot;,&#xd;
+			&quot;DimensionTranslation&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Translation&quot;: &quot;Channel&quot;,&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: &quot;eac8183b-ba7b-473c-bcb9-1a4beb43b9df&quot;,&#xd;
+			&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+			&quot;Alias&quot;: &quot;2&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU Level 3&quot;,&#xd;
+			&quot;ApiName&quot;: null,&#xd;
+			&quot;AttributeKey&quot;: &quot;MPULevel3Key&quot;,&#xd;
+			&quot;KeyDataType&quot;: &quot;integer&quot;,&#xd;
+			&quot;Name&quot;: &quot;MPU Level 3&quot;,&#xd;
+			&quot;EdgeDirection&quot;: null,&#xd;
+			&quot;RelationshipType&quot;: null,&#xd;
+			&quot;DimensionValues&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${MPU Level 3}&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TopologicalSortOrder&quot;: 0,&#xd;
+			&quot;AncestorAttributeNames&quot;: [&#xd;
+				&quot;All&quot;,&#xd;
+				&quot;Channel&quot;,&#xd;
+				&quot;Channel TMP&quot;,&#xd;
+				&quot;Channel Type&quot;,&#xd;
+				&quot;MPU&quot;,&#xd;
+				&quot;MPU Level 2&quot;&#xd;
+			],&#xd;
+			&quot;OrderBy&quot;: &quot;Name&quot;,&#xd;
+			&quot;DimensionTranslation&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Translation&quot;: &quot;MPU Level 3&quot;,&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: &quot;eac8183b-ba7b-473c-bcb9-1a4beb43b9df&quot;,&#xd;
+			&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+			&quot;Alias&quot;: &quot;3&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU Level 2&quot;,&#xd;
+			&quot;ApiName&quot;: null,&#xd;
+			&quot;AttributeKey&quot;: &quot;MPULevel2Key&quot;,&#xd;
+			&quot;KeyDataType&quot;: &quot;integer&quot;,&#xd;
+			&quot;Name&quot;: &quot;MPU Level 2&quot;,&#xd;
+			&quot;EdgeDirection&quot;: null,&#xd;
+			&quot;RelationshipType&quot;: null,&#xd;
+			&quot;DimensionValues&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${MPU Level 2}&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TopologicalSortOrder&quot;: 1,&#xd;
+			&quot;AncestorAttributeNames&quot;: [&#xd;
+				&quot;MPU&quot;,&#xd;
+				&quot;Channel&quot;,&#xd;
+				&quot;Channel Type&quot;,&#xd;
+				&quot;All&quot;&#xd;
+			],&#xd;
+			&quot;OrderBy&quot;: &quot;Name&quot;,&#xd;
+			&quot;DimensionTranslation&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Translation&quot;: &quot;MPU Level 2&quot;,&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;Guid&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;DimensionName&quot;: &quot;Location&quot;,&#xd;
+			&quot;DimensionId&quot;: &quot;761709ac-ef8c-4465-8f07-cdc3ffd9e699&quot;,&#xd;
+			&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+			&quot;Alias&quot;: &quot;4&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;6a28e8b5-6496-4609-9e3f-7a7794838fdd&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Location&quot;,&#xd;
+			&quot;ApiName&quot;: null,&#xd;
+			&quot;AttributeKey&quot;: &quot;LocationKey&quot;,&#xd;
+			&quot;KeyDataType&quot;: &quot;integer&quot;,&#xd;
+			&quot;Name&quot;: &quot;Location&quot;,&#xd;
+			&quot;EdgeDirection&quot;: null,&#xd;
+			&quot;RelationshipType&quot;: null,&#xd;
+			&quot;DimensionValues&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${Location}&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;TopologicalSortOrder&quot;: 0,&#xd;
+			&quot;AncestorAttributeNames&quot;: [&#xd;
+				&quot;Global&quot;,&#xd;
+				&quot;Cluster&quot;,&#xd;
+				&quot;Geo&quot;,&#xd;
+				&quot;Country&quot;&#xd;
+			],&#xd;
+			&quot;OrderBy&quot;: &quot;Name&quot;,&#xd;
+			&quot;DimensionTranslation&quot;: &quot;Location&quot;,&#xd;
+			&quot;Translation&quot;: &quot;Location Code&quot;,&#xd;
+			&quot;AttributeMemberProperties&quot;: [&#xd;
+				{&#xd;
+					&quot;ValueDataType&quot;: &quot;string&quot;,&#xd;
+					&quot;PropertyValue&quot;: null,&#xd;
+					&quot;TranslationName&quot;: &quot;Location Name&quot;,&#xd;
+					&quot;PropertyName&quot;: &quot;LocationName&quot;,&#xd;
+					&quot;KeyColumnDataType&quot;: &quot;string&quot;,&#xd;
+					&quot;Id&quot;: &quot;ccd67bae-11bb-45bc-8667-b0b8a4d1f10c&quot;,&#xd;
+					&quot;FormatString&quot;: &quot;aa&quot;,&#xd;
+					&quot;ConversionFormatString&quot;: &quot;aa&quot;,&#xd;
+					&quot;IsEditable&quot;: true,&#xd;
+					&quot;IsMemberSpecific&quot;: false&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Guid&quot;: &quot;6a28e8b5-6496-4609-9e3f-7a7794838fdd&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;MeasureId&quot;: &quot;33964e14-c9d4-4594-917a-a8cdd1c38cf3&quot;,&#xd;
+			&quot;Name&quot;: &quot;${Measure}&quot;,&#xd;
+			&quot;Alias&quot;: &quot;8&quot;,&#xd;
+			&quot;ApiName&quot;: null,&#xd;
+			&quot;AllCellsReadOnly&quot;: false,&#xd;
+			&quot;IsEditable&quot;: true,&#xd;
+			&quot;FormatString&quot;: &quot;aa&quot;,&#xd;
+			&quot;ConversionFormatString&quot;: &quot;aa&quot;,&#xd;
+			&quot;MeasureColumnName&quot;: &quot;DDS_Like_Store&quot;,&#xd;
+			&quot;MeasureFormula&quot;: null,&#xd;
+			&quot;DataType&quot;: &quot;string&quot;,&#xd;
+			&quot;AggregateFunction&quot;: &quot;DistinctSum&quot;,&#xd;
+			&quot;AggregationType&quot;: 14,&#xd;
+			&quot;ToolTip&quot;: &quot;Location Code of existing store&quot;,&#xd;
+			&quot;IsComputedByPlanningService&quot;: false,&#xd;
+			&quot;HasEditableCellsInPast&quot;: false,&#xd;
+			&quot;MeasureGroupName&quot;: &quot;DDS_Store_Master&quot;,&#xd;
+			&quot;MeasureType&quot;: &quot;Regular&quot;,&#xd;
+			&quot;ConversionFormula&quot;: &quot;&quot;,&#xd;
+			&quot;M2MRelationship&quot;: null,&#xd;
+			&quot;Translation&quot;: &quot;Like Store&quot;,&#xd;
+			&quot;ValidationToolTip&quot;: null,&#xd;
+			&quot;MeasureStaticProperties&quot;: [],&#xd;
+			&quot;MeasureFormatting&quot;: {&#xd;
+				&quot;ApplyForData&quot;: false,&#xd;
+				&quot;ApplyForHeader&quot;: false,&#xd;
+				&quot;IsMDP&quot;: false&#xd;
+			},&#xd;
+			&quot;Guid&quot;: &quot;33964e14-c9d4-4594-917a-a8cdd1c38cf3&quot;,&#xd;
+			&quot;ShowInLocalTimeZone&quot;: false&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;UpdatedRows&quot;: [&#xd;
+		{&#xd;
+			&quot;MemberCells&quot;: [&#xd;
+				{&#xd;
+					&quot;Alias&quot;: &quot;0&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				},&#xd;
+				{&#xd;
+					&quot;Alias&quot;: &quot;1&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				},&#xd;
+				{&#xd;
+					&quot;Alias&quot;: &quot;2&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				},&#xd;
+				{&#xd;
+					&quot;Alias&quot;: &quot;3&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				},&#xd;
+				{&#xd;
+					&quot;Alias&quot;: &quot;4&quot;,&#xd;
+					&quot;MemberIndex&quot;: 0&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;DataCells&quot;: [&#xd;
+				{&#xd;
+					&quot;Alias&quot;: &quot;8&quot;,&#xd;
+					&quot;Value&quot;: &quot;${Value}&quot;&#xd;
+				}&#xd;
+			]&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;FreezeRows&quot;: [],&#xd;
+	&quot;ModelDefinition&quot;: {&#xd;
+		&quot;RegularMeasures&quot;: [&#xd;
+			{&#xd;
+				&quot;Name&quot;: &quot;DDS_Store_Opening_Date&quot;,&#xd;
+				&quot;Id&quot;: &quot;ae244b1c-08a8-4a13-adfb-b028b9c16fff&quot;,&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsEditable&quot;: false,&#xd;
+				&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+				&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+				&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+				&quot;FormatString&quot;: &quot;&quot;,&#xd;
+				&quot;ColumnWidth&quot;: 0,&#xd;
+				&quot;Sort&quot;: &quot;&quot;,&#xd;
+				&quot;UseExcelAggregation&quot;: false,&#xd;
+				&quot;MeasureFormatting&quot;: {&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false,&#xd;
+					&quot;IsMDP&quot;: false&#xd;
+				},&#xd;
+				&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;ChildMeasureCollections&quot;: null,&#xd;
+				&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+				&quot;Guid&quot;: &quot;ae244b1c-08a8-4a13-adfb-b028b9c16fff&quot;,&#xd;
+				&quot;Translation&quot;: &quot;Store Opening Date&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;Store Opening Date&quot;,&#xd;
+				&quot;ValidationToolTip&quot;: null,&#xd;
+				&quot;Alias&quot;: &quot;9&quot;,&#xd;
+				&quot;AggregateFunction&quot;: &quot;Min&quot;,&#xd;
+				&quot;M2MRelationship&quot;: null,&#xd;
+				&quot;MeasureGroupName&quot;: &quot;DDS_Store_Master&quot;,&#xd;
+				&quot;DataType&quot;: &quot;datetime&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Measure&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Name&quot;: &quot;DDS_Store_Closing_Date&quot;,&#xd;
+				&quot;Id&quot;: &quot;1872b33c-01a1-4be2-9bd1-cba57bcffe54&quot;,&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsEditable&quot;: false,&#xd;
+				&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+				&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+				&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+				&quot;FormatString&quot;: &quot;&quot;,&#xd;
+				&quot;ColumnWidth&quot;: 0,&#xd;
+				&quot;Sort&quot;: &quot;&quot;,&#xd;
+				&quot;UseExcelAggregation&quot;: false,&#xd;
+				&quot;MeasureFormatting&quot;: {&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false,&#xd;
+					&quot;IsMDP&quot;: false&#xd;
+				},&#xd;
+				&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;ChildMeasureCollections&quot;: null,&#xd;
+				&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+				&quot;Guid&quot;: &quot;1872b33c-01a1-4be2-9bd1-cba57bcffe54&quot;,&#xd;
+				&quot;Translation&quot;: &quot;Store Closing Date&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;Store Closing Date&quot;,&#xd;
+				&quot;ValidationToolTip&quot;: null,&#xd;
+				&quot;Alias&quot;: &quot;10&quot;,&#xd;
+				&quot;AggregateFunction&quot;: &quot;Max&quot;,&#xd;
+				&quot;M2MRelationship&quot;: null,&#xd;
+				&quot;MeasureGroupName&quot;: &quot;DDS_Store_Master&quot;,&#xd;
+				&quot;DataType&quot;: &quot;datetime&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Measure&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Name&quot;: &quot;DDS_Store_Concept&quot;,&#xd;
+				&quot;Id&quot;: &quot;ad0a04f0-ec24-47b8-b5eb-197e1819ba8e&quot;,&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsEditable&quot;: true,&#xd;
+				&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+				&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+				&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+				&quot;FormatString&quot;: &quot;&quot;,&#xd;
+				&quot;ColumnWidth&quot;: 0,&#xd;
+				&quot;Sort&quot;: &quot;&quot;,&#xd;
+				&quot;UseExcelAggregation&quot;: false,&#xd;
+				&quot;MeasureFormatting&quot;: {&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false,&#xd;
+					&quot;IsMDP&quot;: false&#xd;
+				},&#xd;
+				&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;ChildMeasureCollections&quot;: null,&#xd;
+				&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+				&quot;Guid&quot;: &quot;ad0a04f0-ec24-47b8-b5eb-197e1819ba8e&quot;,&#xd;
+				&quot;Translation&quot;: &quot;Store Concept&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;Store Concept&quot;,&#xd;
+				&quot;ValidationToolTip&quot;: null,&#xd;
+				&quot;Alias&quot;: &quot;11&quot;,&#xd;
+				&quot;AggregateFunction&quot;: &quot;DistinctSum&quot;,&#xd;
+				&quot;M2MRelationship&quot;: null,&#xd;
+				&quot;MeasureGroupName&quot;: &quot;DDS_Store_Master&quot;,&#xd;
+				&quot;DataType&quot;: &quot;picklist&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Measure&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Name&quot;: &quot;DDS_Like_Store&quot;,&#xd;
+				&quot;Id&quot;: &quot;33964e14-c9d4-4594-917a-a8cdd1c38cf3&quot;,&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsEditable&quot;: true,&#xd;
+				&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+				&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+				&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+				&quot;FormatString&quot;: &quot;&quot;,&#xd;
+				&quot;ColumnWidth&quot;: 0,&#xd;
+				&quot;Sort&quot;: &quot;&quot;,&#xd;
+				&quot;UseExcelAggregation&quot;: false,&#xd;
+				&quot;MeasureFormatting&quot;: {&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false,&#xd;
+					&quot;IsMDP&quot;: false&#xd;
+				},&#xd;
+				&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;ChildMeasureCollections&quot;: null,&#xd;
+				&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+				&quot;Guid&quot;: &quot;33964e14-c9d4-4594-917a-a8cdd1c38cf3&quot;,&#xd;
+				&quot;Translation&quot;: &quot;Like Store&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;Location Code of existing store&quot;,&#xd;
+				&quot;ValidationToolTip&quot;: null,&#xd;
+				&quot;Alias&quot;: &quot;12&quot;,&#xd;
+				&quot;AggregateFunction&quot;: &quot;DistinctSum&quot;,&#xd;
+				&quot;M2MRelationship&quot;: null,&#xd;
+				&quot;MeasureGroupName&quot;: &quot;DDS_Store_Master&quot;,&#xd;
+				&quot;DataType&quot;: &quot;string&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Measure&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Name&quot;: &quot;DDS_Store_Exclude&quot;,&#xd;
+				&quot;Id&quot;: &quot;5f7b5dbd-2e3b-42c1-a35d-db95c783ba60&quot;,&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsEditable&quot;: true,&#xd;
+				&quot;ShowInLocalTimeZone&quot;: false,&#xd;
+				&quot;RenderType&quot;: &quot;Value&quot;,&#xd;
+				&quot;Alignment&quot;: &quot;MiddleRight&quot;,&#xd;
+				&quot;FormatString&quot;: &quot;&quot;,&#xd;
+				&quot;ColumnWidth&quot;: 0,&#xd;
+				&quot;Sort&quot;: &quot;&quot;,&#xd;
+				&quot;UseExcelAggregation&quot;: false,&#xd;
+				&quot;MeasureFormatting&quot;: {&#xd;
+					&quot;ApplyForData&quot;: false,&#xd;
+					&quot;ApplyForHeader&quot;: false,&#xd;
+					&quot;IsMDP&quot;: false&#xd;
+				},&#xd;
+				&quot;TimeHorizon&quot;: &quot;&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;ChildMeasureCollections&quot;: null,&#xd;
+				&quot;IsMultiDimensionProperty&quot;: false,&#xd;
+				&quot;Guid&quot;: &quot;5f7b5dbd-2e3b-42c1-a35d-db95c783ba60&quot;,&#xd;
+				&quot;Translation&quot;: &quot;Exclude from Clustering&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;Exclude from Clustering&quot;,&#xd;
+				&quot;ValidationToolTip&quot;: null,&#xd;
+				&quot;Alias&quot;: &quot;13&quot;,&#xd;
+				&quot;AggregateFunction&quot;: &quot;Max&quot;,&#xd;
+				&quot;M2MRelationship&quot;: null,&#xd;
+				&quot;MeasureGroupName&quot;: &quot;DDS_Store_Master&quot;,&#xd;
+				&quot;DataType&quot;: &quot;boolean&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Measure&quot;&#xd;
+			}&#xd;
+		],&#xd;
+		&quot;LevelAttributes&quot;: [&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;Version Name&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Version&quot;,&#xd;
+				&quot;Axis&quot;: &quot;row&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsAttributeRequired&quot;: true,&#xd;
+				&quot;ShowSubtotal&quot;: false,&#xd;
+				&quot;ShowMemberConditionalFormatting&quot;: false,&#xd;
+				&quot;UOMMember&quot;: null,&#xd;
+				&quot;DisplayName&quot;: &quot;&quot;,&#xd;
+				&quot;ShortName&quot;: &quot;&quot;,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;JoinWithGraph&quot;: false,&#xd;
+				&quot;JoinGraphName&quot;: null,&#xd;
+				&quot;JoinWithNode&quot;: &quot;FROM&quot;,&#xd;
+				&quot;Name&quot;: &quot;Version Name&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Version&quot;,&#xd;
+				&quot;Guid&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+				&quot;Translation&quot;: &quot;Version Name&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;Version Name&quot;,&#xd;
+				&quot;Alias&quot;: &quot;0&quot;,&#xd;
+				&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+				&quot;ShowImage&quot;: true,&#xd;
+				&quot;AncestorAttributeNames&quot;: [&#xd;
+					&quot;Version Type&quot;&#xd;
+				]&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;Channel&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+				&quot;Axis&quot;: &quot;row&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsAttributeRequired&quot;: true,&#xd;
+				&quot;ShowSubtotal&quot;: false,&#xd;
+				&quot;ShowMemberConditionalFormatting&quot;: false,&#xd;
+				&quot;UOMMember&quot;: null,&#xd;
+				&quot;DisplayName&quot;: &quot;&quot;,&#xd;
+				&quot;ShortName&quot;: &quot;&quot;,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;JoinWithGraph&quot;: false,&#xd;
+				&quot;JoinGraphName&quot;: null,&#xd;
+				&quot;JoinWithNode&quot;: &quot;FROM&quot;,&#xd;
+				&quot;Name&quot;: &quot;Channel&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+				&quot;Guid&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+				&quot;Translation&quot;: &quot;Channel&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;Channel&quot;,&#xd;
+				&quot;Alias&quot;: &quot;1&quot;,&#xd;
+				&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+				&quot;ShowImage&quot;: true,&#xd;
+				&quot;AncestorAttributeNames&quot;: [&#xd;
+					&quot;Channel Type&quot;,&#xd;
+					&quot;All&quot;&#xd;
+				]&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;MPU Level 3&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+				&quot;Axis&quot;: &quot;row&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsAttributeRequired&quot;: true,&#xd;
+				&quot;ShowSubtotal&quot;: false,&#xd;
+				&quot;ShowMemberConditionalFormatting&quot;: false,&#xd;
+				&quot;UOMMember&quot;: null,&#xd;
+				&quot;DisplayName&quot;: &quot;&quot;,&#xd;
+				&quot;ShortName&quot;: &quot;&quot;,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;JoinWithGraph&quot;: false,&#xd;
+				&quot;JoinGraphName&quot;: null,&#xd;
+				&quot;JoinWithNode&quot;: &quot;FROM&quot;,&#xd;
+				&quot;Name&quot;: &quot;MPU Level 3&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+				&quot;Guid&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+				&quot;Translation&quot;: &quot;MPU Level 3&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;MPU Level 3&quot;,&#xd;
+				&quot;Alias&quot;: &quot;3&quot;,&#xd;
+				&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+				&quot;ShowImage&quot;: true,&#xd;
+				&quot;AncestorAttributeNames&quot;: [&#xd;
+					&quot;All&quot;,&#xd;
+					&quot;Channel&quot;,&#xd;
+					&quot;Channel TMP&quot;,&#xd;
+					&quot;Channel Type&quot;,&#xd;
+					&quot;MPU&quot;,&#xd;
+					&quot;MPU Level 2&quot;&#xd;
+				]&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;MPU Level 2&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+				&quot;Axis&quot;: &quot;row&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsAttributeRequired&quot;: true,&#xd;
+				&quot;ShowSubtotal&quot;: false,&#xd;
+				&quot;ShowMemberConditionalFormatting&quot;: false,&#xd;
+				&quot;UOMMember&quot;: null,&#xd;
+				&quot;DisplayName&quot;: &quot;&quot;,&#xd;
+				&quot;ShortName&quot;: &quot;&quot;,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;JoinWithGraph&quot;: false,&#xd;
+				&quot;JoinGraphName&quot;: null,&#xd;
+				&quot;JoinWithNode&quot;: &quot;FROM&quot;,&#xd;
+				&quot;Name&quot;: &quot;MPU Level 2&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+				&quot;Guid&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+				&quot;Translation&quot;: &quot;MPU Level 2&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;MPU Level 2&quot;,&#xd;
+				&quot;Alias&quot;: &quot;4&quot;,&#xd;
+				&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+				&quot;ShowImage&quot;: true,&#xd;
+				&quot;AncestorAttributeNames&quot;: [&#xd;
+					&quot;MPU&quot;,&#xd;
+					&quot;Channel&quot;,&#xd;
+					&quot;Channel Type&quot;,&#xd;
+					&quot;All&quot;&#xd;
+				]&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;6a28e8b5-6496-4609-9e3f-7a7794838fdd&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;Location&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Location&quot;,&#xd;
+				&quot;Axis&quot;: &quot;row&quot;,&#xd;
+				&quot;ShowInfo&quot;: {&#xd;
+					&quot;ShowDetail&quot;: true,&#xd;
+					&quot;ShowPulse&quot;: true,&#xd;
+					&quot;ShowTask&quot;: true,&#xd;
+					&quot;ShowMarketIntelligence&quot;: true&#xd;
+				},&#xd;
+				&quot;IsVisible&quot;: true,&#xd;
+				&quot;IsAttributeRequired&quot;: true,&#xd;
+				&quot;ShowSubtotal&quot;: false,&#xd;
+				&quot;ShowMemberConditionalFormatting&quot;: false,&#xd;
+				&quot;UOMMember&quot;: null,&#xd;
+				&quot;DisplayName&quot;: &quot;&quot;,&#xd;
+				&quot;ShortName&quot;: &quot;&quot;,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;JoinWithGraph&quot;: false,&#xd;
+				&quot;JoinGraphName&quot;: null,&#xd;
+				&quot;JoinWithNode&quot;: &quot;FROM&quot;,&#xd;
+				&quot;MemberProperties&quot;: [&#xd;
+					{&#xd;
+						&quot;Id&quot;: &quot;LocationName&quot;,&#xd;
+						&quot;Guid&quot;: &quot;6a28e8b5-6496-4609-9e3f-7a7794838fdd^LocationName&quot;,&#xd;
+						&quot;Name&quot;: &quot;LocationName&quot;,&#xd;
+						&quot;IsVisible&quot;: true,&#xd;
+						&quot;Translation&quot;: &quot;Location Name&quot;,&#xd;
+						&quot;ToolTip&quot;: &quot;Location Name&quot;,&#xd;
+						&quot;ShowInLocalTimeZone&quot;: false&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;Name&quot;: &quot;Location&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Location&quot;,&#xd;
+				&quot;Guid&quot;: &quot;6a28e8b5-6496-4609-9e3f-7a7794838fdd&quot;,&#xd;
+				&quot;Translation&quot;: &quot;Location Code&quot;,&#xd;
+				&quot;ToolTip&quot;: &quot;Location Code&quot;,&#xd;
+				&quot;Alias&quot;: &quot;5&quot;,&#xd;
+				&quot;DimensionType&quot;: &quot;Regular&quot;,&#xd;
+				&quot;ShowImage&quot;: true,&#xd;
+				&quot;EdgeDirection&quot;: null,&#xd;
+				&quot;AncestorAttributeNames&quot;: [&#xd;
+					&quot;Global&quot;,&#xd;
+					&quot;Cluster&quot;,&#xd;
+					&quot;Geo&quot;,&#xd;
+					&quot;Country&quot;&#xd;
+				]&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;Geo&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Location&quot;,&#xd;
+				&quot;DimensionId&quot;: 124729,&#xd;
+				&quot;IsFilter&quot;: true,&#xd;
+				&quot;Axis&quot;: &quot;none&quot;,&#xd;
+				&quot;IsDefault&quot;: true,&#xd;
+				&quot;AllSelection&quot;: false,&#xd;
+				&quot;SelectedMembers&quot;: [&#xd;
+					{&#xd;
+						&quot;Name&quot;: &quot;${Geo}&quot;&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;Name&quot;: &quot;Geo&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Location&quot;,&#xd;
+				&quot;OverrideFavSelection&quot;: false,&#xd;
+				&quot;CurrencyFilter&quot;: false,&#xd;
+				&quot;IsSingleSelect&quot;: true,&#xd;
+				&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+				&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+				&quot;WorksheetLevelFilter&quot;: false,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+				&quot;IsNarrowYourSelection&quot;: false,&#xd;
+				&quot;Position&quot;: 0,&#xd;
+				&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+				&quot;FiltersMap&quot;: {&#xd;
+					&quot;28eda67783c2bcd15a538f82312c26d4&quot;: &quot;28eda67783c2bcd15a538f82312c26d4&quot;&#xd;
+				},&#xd;
+				&quot;Guid&quot;: &quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&#xd;
+				&quot;AttributeId&quot;: &quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&#xd;
+				&quot;AncestorAttributeNames&quot;: [],&#xd;
+				&quot;AttributeMemberProperties&quot;: [],&#xd;
+				&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;Country&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Location&quot;,&#xd;
+				&quot;DimensionId&quot;: 124729,&#xd;
+				&quot;IsFilter&quot;: true,&#xd;
+				&quot;Axis&quot;: &quot;none&quot;,&#xd;
+				&quot;IsDefault&quot;: true,&#xd;
+				&quot;AllSelection&quot;: false,&#xd;
+				&quot;SelectedMembers&quot;: [&#xd;
+					{&#xd;
+						&quot;Name&quot;: &quot;${Country}&quot;&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;Name&quot;: &quot;Country&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Location&quot;,&#xd;
+				&quot;OverrideFavSelection&quot;: false,&#xd;
+				&quot;CurrencyFilter&quot;: false,&#xd;
+				&quot;IsSingleSelect&quot;: true,&#xd;
+				&quot;MemberFilterExpression&quot;: &quot;&amp;DFPCountry&quot;,&#xd;
+				&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+				&quot;WorksheetLevelFilter&quot;: false,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+				&quot;IsNarrowYourSelection&quot;: false,&#xd;
+				&quot;Position&quot;: 1,&#xd;
+				&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+				&quot;FiltersMap&quot;: {&#xd;
+					&quot;28eda67783c2bcd15a538f82312c26d4&quot;: &quot;28eda67783c2bcd15a538f82312c26d4&quot;&#xd;
+				},&#xd;
+				&quot;Guid&quot;: &quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&#xd;
+				&quot;AttributeId&quot;: &quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&#xd;
+				&quot;AncestorAttributeNames&quot;: [],&#xd;
+				&quot;AttributeMemberProperties&quot;: [],&#xd;
+				&quot;SelectedMembersIbplExpression&quot;: &quot;&amp;DFPCountry&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;Channel&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+				&quot;DimensionId&quot;: 124731,&#xd;
+				&quot;IsFilter&quot;: true,&#xd;
+				&quot;Axis&quot;: &quot;none&quot;,&#xd;
+				&quot;IsDefault&quot;: true,&#xd;
+				&quot;AllSelection&quot;: false,&#xd;
+				&quot;SelectedMembers&quot;: [&#xd;
+					{&#xd;
+						&quot;Name&quot;: &quot;${Channel}&quot;&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;Name&quot;: &quot;Channel&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+				&quot;OverrideFavSelection&quot;: false,&#xd;
+				&quot;CurrencyFilter&quot;: false,&#xd;
+				&quot;IsSingleSelect&quot;: true,&#xd;
+				&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+				&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+				&quot;WorksheetLevelFilter&quot;: false,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+				&quot;IsNarrowYourSelection&quot;: false,&#xd;
+				&quot;Position&quot;: 2,&#xd;
+				&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+				&quot;FiltersMap&quot;: {&#xd;
+					&quot;9abae0dbc952673063a303860aeb0565&quot;: &quot;9abae0dbc952673063a303860aeb0565&quot;&#xd;
+				},&#xd;
+				&quot;Guid&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+				&quot;AttributeId&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+				&quot;AncestorAttributeNames&quot;: [&#xd;
+					&quot;Channel Type&quot;,&#xd;
+					&quot;All&quot;&#xd;
+				],&#xd;
+				&quot;AttributeMemberProperties&quot;: [],&#xd;
+				&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;MPU&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+				&quot;DimensionId&quot;: 124731,&#xd;
+				&quot;IsFilter&quot;: true,&#xd;
+				&quot;Axis&quot;: &quot;none&quot;,&#xd;
+				&quot;IsDefault&quot;: false,&#xd;
+				&quot;AllSelection&quot;: true,&#xd;
+				&quot;SelectedMembers&quot;: [],&#xd;
+				&quot;Name&quot;: &quot;MPU&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+				&quot;OverrideFavSelection&quot;: false,&#xd;
+				&quot;Position&quot;: 3,&#xd;
+				&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+				&quot;CurrencyFilter&quot;: false,&#xd;
+				&quot;FiltersMap&quot;: {&#xd;
+					&quot;9abae0dbc952673063a303860aeb0565&quot;: &quot;9abae0dbc952673063a303860aeb0565&quot;&#xd;
+				},&#xd;
+				&quot;Guid&quot;: &quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&#xd;
+				&quot;AttributeId&quot;: &quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&#xd;
+				&quot;AncestorAttributeNames&quot;: [],&#xd;
+				&quot;AttributeMemberProperties&quot;: []&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;MPU Level 3&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+				&quot;DimensionId&quot;: 124731,&#xd;
+				&quot;IsFilter&quot;: true,&#xd;
+				&quot;Axis&quot;: &quot;none&quot;,&#xd;
+				&quot;IsDefault&quot;: true,&#xd;
+				&quot;AllSelection&quot;: false,&#xd;
+				&quot;SelectedMembers&quot;: [&#xd;
+					{&#xd;
+						&quot;Name&quot;: &quot;${MPU Level 3}&quot;&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;Name&quot;: &quot;MPU Level 3&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+				&quot;OverrideFavSelection&quot;: false,&#xd;
+				&quot;CurrencyFilter&quot;: false,&#xd;
+				&quot;IsSingleSelect&quot;: true,&#xd;
+				&quot;MemberFilterExpression&quot;: &quot;&amp;StoresMPULevel3&quot;,&#xd;
+				&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+				&quot;WorksheetLevelFilter&quot;: false,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+				&quot;IsNarrowYourSelection&quot;: false,&#xd;
+				&quot;Position&quot;: 4,&#xd;
+				&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+				&quot;FiltersMap&quot;: {&#xd;
+					&quot;9abae0dbc952673063a303860aeb0565&quot;: &quot;9abae0dbc952673063a303860aeb0565&quot;&#xd;
+				},&#xd;
+				&quot;Guid&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+				&quot;AttributeId&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+				&quot;AncestorAttributeNames&quot;: [&#xd;
+					&quot;All&quot;,&#xd;
+					&quot;Channel&quot;,&#xd;
+					&quot;Channel TMP&quot;,&#xd;
+					&quot;Channel Type&quot;,&#xd;
+					&quot;MPU&quot;,&#xd;
+					&quot;MPU Level 2&quot;&#xd;
+				],&#xd;
+				&quot;AttributeMemberProperties&quot;: [],&#xd;
+				&quot;SelectedMembersIbplExpression&quot;: &quot;&amp;StoresMPULevel3&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;MPU Level 2&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+				&quot;DimensionId&quot;: 124731,&#xd;
+				&quot;IsFilter&quot;: true,&#xd;
+				&quot;Axis&quot;: &quot;none&quot;,&#xd;
+				&quot;IsDefault&quot;: true,&#xd;
+				&quot;AllSelection&quot;: false,&#xd;
+				&quot;SelectedMembers&quot;: [&#xd;
+					{&#xd;
+						&quot;Name&quot;: &quot;${MPU Level 2}&quot;&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;Name&quot;: &quot;MPU Level 2&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+				&quot;OverrideFavSelection&quot;: false,&#xd;
+				&quot;CurrencyFilter&quot;: false,&#xd;
+				&quot;IsSingleSelect&quot;: true,&#xd;
+				&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+				&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+				&quot;WorksheetLevelFilter&quot;: false,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+				&quot;IsNarrowYourSelection&quot;: false,&#xd;
+				&quot;Position&quot;: 5,&#xd;
+				&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+				&quot;FiltersMap&quot;: {&#xd;
+					&quot;9abae0dbc952673063a303860aeb0565&quot;: &quot;9abae0dbc952673063a303860aeb0565&quot;&#xd;
+				},&#xd;
+				&quot;Guid&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+				&quot;AttributeId&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+				&quot;AncestorAttributeNames&quot;: [&#xd;
+					&quot;MPU&quot;,&#xd;
+					&quot;Channel&quot;,&#xd;
+					&quot;Channel Type&quot;,&#xd;
+					&quot;All&quot;&#xd;
+				],&#xd;
+				&quot;AttributeMemberProperties&quot;: [],&#xd;
+				&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;Id&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+				&quot;AttributeName&quot;: &quot;Version Name&quot;,&#xd;
+				&quot;Dimension&quot;: &quot;Version&quot;,&#xd;
+				&quot;DimensionId&quot;: 124728,&#xd;
+				&quot;IsFilter&quot;: true,&#xd;
+				&quot;Axis&quot;: &quot;none&quot;,&#xd;
+				&quot;IsDefault&quot;: true,&#xd;
+				&quot;AllSelection&quot;: false,&#xd;
+				&quot;SelectedMembers&quot;: [&#xd;
+					{&#xd;
+						&quot;Name&quot;: &quot;CurrentWorkingView&quot;&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;Name&quot;: &quot;Version Name&quot;,&#xd;
+				&quot;DimensionName&quot;: &quot;Version&quot;,&#xd;
+				&quot;OverrideFavSelection&quot;: false,&#xd;
+				&quot;IsSingleSelect&quot;: false,&#xd;
+				&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+				&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+				&quot;WorksheetLevelFilter&quot;: false,&#xd;
+				&quot;SortBy&quot;: &quot;&quot;,&#xd;
+				&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+				&quot;IsNarrowYourSelection&quot;: false,&#xd;
+				&quot;Position&quot;: 6,&#xd;
+				&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+				&quot;CurrencyFilter&quot;: false,&#xd;
+				&quot;FiltersMap&quot;: {&#xd;
+					&quot;cd35f66e4cf7ce48cbad1d09c140e068&quot;: &quot;cd35f66e4cf7ce48cbad1d09c140e068&quot;&#xd;
+				},&#xd;
+				&quot;Guid&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+				&quot;AttributeId&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+				&quot;AncestorAttributeNames&quot;: [&#xd;
+					&quot;Version Type&quot;&#xd;
+				],&#xd;
+				&quot;AttributeMemberProperties&quot;: [],&#xd;
+				&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+			}&#xd;
+		],&#xd;
+		&quot;NamedSets&quot;: [],&#xd;
+		&quot;DataProperties&quot;: {&#xd;
+			&quot;IncludeInactiveMembers&quot;: false,&#xd;
+			&quot;IncludeNulls&quot;: false,&#xd;
+			&quot;NullsForFinerGrainSelect&quot;: false,&#xd;
+			&quot;NullsForUnrelatedAttrSelect&quot;: false,&#xd;
+			&quot;RequireEditValidation&quot;: false,&#xd;
+			&quot;SubTotalsType&quot;: &quot;NoSubtotals&quot;,&#xd;
+			&quot;IncludeNullsForSeries&quot;: &quot;&quot;,&#xd;
+			&quot;AssociationMeasureExpression&quot;: &quot;&quot;,&#xd;
+			&quot;ExcludeConditionalFormatting&quot;: true,&#xd;
+			&quot;NodeTraversalSteps&quot;: &quot;ALL&quot;&#xd;
+		},&#xd;
+		&quot;AssociationMeasures&quot;: [&#xd;
+			{&#xd;
+				&quot;MeasureFilterIBPLExpression&quot;: &quot;&quot;,&#xd;
+				&quot;MeasureFilterScope&quot;: &quot;Post Filter&quot;&#xd;
+			}&#xd;
+		],&#xd;
+		&quot;AssociationMeasureExpressions&quot;: [&#xd;
+			{&#xd;
+				&quot;Expression&quot;: &quot;&quot;&#xd;
+			}&#xd;
+		],&#xd;
+		&quot;MeasureValueFilters&quot;: [],&#xd;
+		&quot;TransientMeasures&quot;: [],&#xd;
+		&quot;PeggingAttributes&quot;: [],&#xd;
+		&quot;GraphRelations&quot;: []&#xd;
+	},&#xd;
+	&quot;Filters&quot;: [&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Geo&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Location&quot;,&#xd;
+			&quot;DimensionId&quot;: 124729,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${Geo}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;Geo&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Location&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 0,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;28eda67783c2bcd15a538f82312c26d4&quot;: &quot;28eda67783c2bcd15a538f82312c26d4&quot;&#xd;
+			},&#xd;
+			&quot;Guid&quot;: &quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;9118e73b-1e1b-425e-aee8-c4e6b7af0689&quot;,&#xd;
+			&quot;AncestorAttributeNames&quot;: [],&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Country&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Location&quot;,&#xd;
+			&quot;DimensionId&quot;: 124729,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${Country}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;Country&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Location&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&amp;DFPCountry&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 1,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;28eda67783c2bcd15a538f82312c26d4&quot;: &quot;28eda67783c2bcd15a538f82312c26d4&quot;&#xd;
+			},&#xd;
+			&quot;Guid&quot;: &quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;055daed0-be3a-4e7e-84df-e8d6f39a6f9d&quot;,&#xd;
+			&quot;AncestorAttributeNames&quot;: [],&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&amp;DFPCountry&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: 124731,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${Channel}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 2,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;9abae0dbc952673063a303860aeb0565&quot;: &quot;9abae0dbc952673063a303860aeb0565&quot;&#xd;
+			},&#xd;
+			&quot;Guid&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;33531175-6cc6-41f4-9d54-3f62ddb8a0b0&quot;,&#xd;
+			&quot;AncestorAttributeNames&quot;: [&#xd;
+				&quot;Channel Type&quot;,&#xd;
+				&quot;All&quot;&#xd;
+			],&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: 124731,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: false,&#xd;
+			&quot;AllSelection&quot;: true,&#xd;
+			&quot;SelectedMembers&quot;: [],&#xd;
+			&quot;Name&quot;: &quot;MPU&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 3,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;9abae0dbc952673063a303860aeb0565&quot;: &quot;9abae0dbc952673063a303860aeb0565&quot;&#xd;
+			},&#xd;
+			&quot;Guid&quot;: &quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;f9defbf6-f843-4fa2-b67c-d3b14ac09360&quot;,&#xd;
+			&quot;AncestorAttributeNames&quot;: [],&#xd;
+			&quot;AttributeMemberProperties&quot;: []&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU Level 3&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: 124731,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${MPU Level 3}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;MPU Level 3&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&amp;StoresMPULevel3&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 4,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;9abae0dbc952673063a303860aeb0565&quot;: &quot;9abae0dbc952673063a303860aeb0565&quot;&#xd;
+			},&#xd;
+			&quot;Guid&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;cbb2f92a-ef9b-4034-9199-effa47b9ac29&quot;,&#xd;
+			&quot;AncestorAttributeNames&quot;: [&#xd;
+				&quot;All&quot;,&#xd;
+				&quot;Channel&quot;,&#xd;
+				&quot;Channel TMP&quot;,&#xd;
+				&quot;Channel Type&quot;,&#xd;
+				&quot;MPU&quot;,&#xd;
+				&quot;MPU Level 2&quot;&#xd;
+			],&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&amp;StoresMPULevel3&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;MPU Level 2&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Channel&quot;,&#xd;
+			&quot;DimensionId&quot;: 124731,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;${MPU Level 2}&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;MPU Level 2&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Channel&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: true,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 5,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;9abae0dbc952673063a303860aeb0565&quot;: &quot;9abae0dbc952673063a303860aeb0565&quot;&#xd;
+			},&#xd;
+			&quot;Guid&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;fd1ca147-df23-4935-93f1-078d7a48b9b2&quot;,&#xd;
+			&quot;AncestorAttributeNames&quot;: [&#xd;
+				&quot;MPU&quot;,&#xd;
+				&quot;Channel&quot;,&#xd;
+				&quot;Channel Type&quot;,&#xd;
+				&quot;All&quot;&#xd;
+			],&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;Id&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+			&quot;AttributeName&quot;: &quot;Version Name&quot;,&#xd;
+			&quot;Dimension&quot;: &quot;Version&quot;,&#xd;
+			&quot;DimensionId&quot;: 124728,&#xd;
+			&quot;IsFilter&quot;: true,&#xd;
+			&quot;Axis&quot;: &quot;none&quot;,&#xd;
+			&quot;IsDefault&quot;: true,&#xd;
+			&quot;AllSelection&quot;: false,&#xd;
+			&quot;SelectedMembers&quot;: [&#xd;
+				{&#xd;
+					&quot;Name&quot;: &quot;CurrentWorkingView&quot;&#xd;
+				}&#xd;
+			],&#xd;
+			&quot;Name&quot;: &quot;Version Name&quot;,&#xd;
+			&quot;DimensionName&quot;: &quot;Version&quot;,&#xd;
+			&quot;OverrideFavSelection&quot;: false,&#xd;
+			&quot;IsSingleSelect&quot;: false,&#xd;
+			&quot;MemberFilterExpression&quot;: &quot;&quot;,&#xd;
+			&quot;DefaultValueExpression&quot;: &quot;&quot;,&#xd;
+			&quot;WorksheetLevelFilter&quot;: false,&#xd;
+			&quot;SortBy&quot;: &quot;&quot;,&#xd;
+			&quot;SortOrder&quot;: &quot;&quot;,&#xd;
+			&quot;IsNarrowYourSelection&quot;: false,&#xd;
+			&quot;Position&quot;: 6,&#xd;
+			&quot;ShowFilterAs&quot;: &quot;TileView&quot;,&#xd;
+			&quot;CurrencyFilter&quot;: false,&#xd;
+			&quot;FiltersMap&quot;: {&#xd;
+				&quot;cd35f66e4cf7ce48cbad1d09c140e068&quot;: &quot;cd35f66e4cf7ce48cbad1d09c140e068&quot;&#xd;
+			},&#xd;
+			&quot;Guid&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+			&quot;AttributeId&quot;: &quot;211b33d5-d91f-40ec-9668-20e0da2ae7b3&quot;,&#xd;
+			&quot;AncestorAttributeNames&quot;: [&#xd;
+				&quot;Version Type&quot;&#xd;
+			],&#xd;
+			&quot;AttributeMemberProperties&quot;: [],&#xd;
+			&quot;SelectedMembersIbplExpression&quot;: &quot;&quot;&#xd;
+		}&#xd;
+	]&#xd;
+}&#xd;
+&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${Token}</stringProp>
+                </elementProp>
+                <elementProp name="o9-uielement" elementType="Header">
+                  <stringProp name="Header.name">o9-uielement</stringProp>
+                  <stringProp name="Header.value">#/Assortment%20Planning/Store%20Master/Store%20Master|Store_Channel_Master|a6c1deff-e57d-4577-92f4-3e8b6e7542b7</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+                <elementProp name="Client-Locale" elementType="Header">
+                  <stringProp name="Header.name">Client-Locale</stringProp>
+                  <stringProp name="Header.value">en-US</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">${Delaytime}</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">C:/Users/dhanavel.ramesh/general/general/AssortmentPlanning_JMEterScript/DDSNA_AP_Script - Updated API/data(2)/1_Location_management.csv</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames"></stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
