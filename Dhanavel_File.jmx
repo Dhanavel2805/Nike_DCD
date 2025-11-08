@@ -1824,7 +1824,7 @@
                   <elementProp name="date" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.name">date</stringProp>
-                    <stringProp name="Argument.value">2025-11-10</stringProp>
+                    <stringProp name="Argument.value">2025-11-11</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   </elementProp>
